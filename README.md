@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+create header and cart section
+
 ## Available Scripts
 
 In the project directory, you can run:

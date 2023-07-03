@@ -188,7 +188,7 @@ function App() {
               </li>
             </ul>
 
-            <button>
+            <button className="green-button">
               Оформить заказ
               <img src="/img/icons/arrow.svg" alt="arrow" />
             </button>

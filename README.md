@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-create header and cart section
+create header and cart section.
 
 ## Available Scripts
 

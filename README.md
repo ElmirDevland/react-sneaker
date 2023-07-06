@@ -1,9 +1,9 @@
 # Getting Started with Create React App
 
 create header and cart section.
+add react components.
 
 ## Available Scripts
-///
 
 In the project directory, you can run:
 

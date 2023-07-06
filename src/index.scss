@@ -24,6 +24,7 @@ body {
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
   &:hover {
     background-color: darken($color: #9dd458, $amount: 15%);
   }
@@ -89,9 +90,17 @@ body {
 
         .green-button {
           position: relative;
+
           img {
+            transition: all 0.2s ease-in-out;
+
             position: absolute;
             right: 34px;
+          }
+          &:hover {
+            img {
+              transform: translateX(5px);
+            }
           }
         }
       }

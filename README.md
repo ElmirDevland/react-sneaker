@@ -2,6 +2,7 @@
 
 create header and cart section.
 add react components.
+use style modules.
 
 ## Available Scripts
 

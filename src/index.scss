@@ -114,7 +114,7 @@ body {
         border: 1px solid #f3f3f3;
         background: #fff;
         overflow: hidden;
-        padding: 20px 20px 20px 30px;
+        padding: 20px 20px 29px 20px;
         height: 119px;
         width: 325px;
         margin: 0px 0px 20px 0px;
@@ -122,14 +122,17 @@ body {
         .cart-item-img {
           background-repeat: no-repeat;
           background-size: contain;
-          background-position: center;
+          background-position: 0 4px;
+          background-image: url(../public/img/sneakers/2.jpg);
           width: 70px;
           height: 70px;
           margin-bottom: 6px;
+          margin-right: 11px;
           transform: translateX(-10px);
         }
         .description {
           width: 150px;
+          margin: 0px 12px 0px 0px;
           p {
             margin: 0px 0px 8px 0px;
             color: #000;
@@ -153,8 +156,13 @@ header {
     li {
       display: flex;
       align-items: center;
-      &:first-child {
+      &:hover {
+        cursor: pointer;
+      }
+      &:not(:last-child) {
         margin-right: 30px;
+      }
+      &:first-child {
         img {
           margin-right: 10px;
         }
@@ -176,6 +184,7 @@ header {
   }
 }
 .content {
+  padding: 60px;
   h1 {
     color: #000;
     font-size: 32px;
@@ -199,8 +208,16 @@ header {
       }
     }
   }
+  .sneakers {
+    max-width: 960px;
+    flex-wrap: wrap;
+  }
 }
-
 .button {
   cursor: pointer;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
 }

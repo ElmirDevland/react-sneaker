@@ -1,30 +1,27 @@
+import { useEffect, useState } from 'react';
 import Cart from './components/Cart';
 import Header from './components/Header';
 import Content from './components/Content';
 
-const sneakers = [
-  {
-    name: 'Мужские Кроссовки Nike Blazer Mid Suede',
-    price: '12 999',
-    img: '/img/sneakers/1.jpg',
-  },
-  {
-    name: 'Мужские Кроссовки Nike Air Max 270',
-    price: '12 999',
-    img: '/img/sneakers/2.jpg',
-  },
-  {
-    name: 'Мужские Кроссовки Nike Blazer Mid Suede',
-    price: '8 499',
-    img: '/img/sneakers/3.jpg',
-  },
-];
-
 function App() {
+  const [sneakers, setSneakers] = useState([]);
+  const [cartOpen, setCartOpen] = useState(false);
+
+  useEffect(() => {
+    fetch('https://64cf609affcda80aff51c9b0.mockapi.io/items')
+      .then((items) => items.json())
+      .then((data) => setSneakers(data));
+  }, []);
+
+  const openCart = () => {
+    setCartOpen(!cartOpen);
+    document.body.style.overflow = 'hidden';
+  };
+
   return (
     <div className="wrapper clear">
-      <Cart />
-      <Header />
+      <Cart openCart={openCart} cartOpen={cartOpen} />
+      <Header openCart={openCart} />
       <Content sneakers={sneakers} />
     </div>
   );

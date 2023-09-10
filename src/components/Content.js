@@ -1,6 +1,6 @@
 import Card from './Card';
 
-const Content = ({ sneakers }) => {
+const Content = ({ sneakers, addToCart }) => {
   return (
     <div className="content">
       <div className=" mb-40 d-flex align-center justify-between">
@@ -12,7 +12,7 @@ const Content = ({ sneakers }) => {
       </div>
       <div className="sneakers  d-flex">
         {sneakers.map((obj, i) => (
-          <Card key={i} {...obj} />
+          <Card addToCart={addToCart} key={i} {...obj} />
         ))}
       </div>
     </div>

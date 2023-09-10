@@ -5,6 +5,7 @@ import Content from './components/Content';
 
 function App() {
   const [sneakers, setSneakers] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
 
   useEffect(() => {
@@ -13,16 +14,24 @@ function App() {
       .then((data) => setSneakers(data));
   }, []);
 
-  const openCart = () => {
+  const addToCart = (obj) => {
+    setCartItems([...cartItems, obj]);
+  };
+
+  const showCart = () => {
     setCartOpen(!cartOpen);
-    document.body.style.overflow = 'hidden';
+    if (!cartOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
   };
 
   return (
     <div className="wrapper clear">
-      <Cart openCart={openCart} cartOpen={cartOpen} />
-      <Header openCart={openCart} />
-      <Content sneakers={sneakers} />
+      {cartOpen && <Cart cartItems={cartItems} hideCart={showCart} />}
+      <Header showCart={showCart} />
+      <Content addToCart={addToCart} sneakers={sneakers} />
     </div>
   );
 }

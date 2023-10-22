@@ -4,6 +4,8 @@ create header and cart section.
 add react components.
 use style modules.
 
+adding shopping cart and favorite products
+
 ## Available Scripts
 
 In the project directory, you can run:

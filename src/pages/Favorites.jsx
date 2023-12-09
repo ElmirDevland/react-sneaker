@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
 
-function Home({ favItems, addToFav }) {
+function Favorites({ favItems, addToFav }) {
   return (
     <div className="content">
       {favItems.length > 0 ? (
@@ -75,4 +75,4 @@ function Home({ favItems, addToFav }) {
   );
 }
 
-export default Home;
+export default Favorites;
